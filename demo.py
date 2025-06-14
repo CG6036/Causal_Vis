@@ -47,7 +47,7 @@ def load_quarterly(file):
     return df
 
 if ts_file is None or q_file is None:
-    st.info("⬆️  Upload both CSV files to proceed.")
+    st.info("⬆️  Upload CSV files to proceed.")
     st.stop()
 
 try:
