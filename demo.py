@@ -93,13 +93,10 @@ st.markdown("### 🎯 Target Adjustment")
 
 col1, col2 = st.columns([1, 1])
 with col1:
-    st.markdown("<span style='font-size:18px;'>📅 <b>Select target date</b></span>", unsafe_allow_html=True)
-    target_dt = st.date_input("", value=datetime.date(2022, 10, 3),
-                              min_value=min_date, max_value=max_date)
-
+    target_dt = st.date_input("📅 Select target date", value=datetime.date(2022, 10, 3),
+                                min_value=min_date, max_value=max_date)
 with col2:
-    st.markdown("<span style='font-size:18px;'>🔢 <b>Top-N variables (by |value|)</b></span>", unsafe_allow_html=True)
-    n_vars = st.slider("", 1, 10, 3)
+    n_vars = st.slider("🔢 Top-N variables (by |value|)", 1, 10, 3)
 
 latest_slice = (
     df_ts[df_ts["date"] == pd.to_datetime(target_dt)]
