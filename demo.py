@@ -17,9 +17,15 @@ col1, col2 = st.columns([2, 8])  # col1: logo + title, col2: empty or content la
 with col1:
     st.image("impactiveAI_logo.png", width=1000)
 st.markdown(
-    "<h2 style='text-align: center; margin-top: 20px;'>SKT DRAM Price<br>Causality Visualization Dashboard</h2>",
+    """
+    <h2 style='text-align: center; margin-top: 20px;'>
+        Causality Visualization Dashboard<br>
+        <span style='font-size: 18px;'>SKT DRAM Price</span>
+    </h2>
+    """,
     unsafe_allow_html=True
 )
+
 
 # -----------------------------------------------------------------------------
 # 1. DATA UPLOAD (INLINE + SMALLER)
