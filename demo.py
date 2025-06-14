@@ -27,29 +27,23 @@ st.markdown(
 st.markdown("### 📂 Upload Files")
 col1, col2, col3 = st.columns([1, 1, 1])
 
+col1, col2, col3 = st.columns(3)
+
 with col1:
-    st.markdown("""
-        <div style="margin-bottom: -50px;">
-            <label style="font-size:18px;">1. Aggregated Result</label>
-        </div>
-    """, unsafe_allow_html=True)
-    ts_file = st.file_uploader("", type=["csv"])
+    st.markdown("**1. Aggregated Result**", unsafe_allow_html=True)
+    st.markdown("<div style='margin-top:-12px'></div>", unsafe_allow_html=True)
+    ts_file = st.file_uploader("", type=["csv"], key="ts")
 
 with col2:
-    st.markdown("""
-        <div style="margin-bottom: -50px;">
-            <label style="font-size:18px;">2. Quarterly ASP</label>
-        </div>
-    """, unsafe_allow_html=True)
-    q_file = st.file_uploader("", type=["csv"])
+    st.markdown("**2. Quarterly ASP**", unsafe_allow_html=True)
+    st.markdown("<div style='margin-top:-12px'></div>", unsafe_allow_html=True)
+    q_file = st.file_uploader("", type=["csv"], key="q")
 
 with col3:
-    st.markdown("""
-        <div style="margin-bottom: -50px;">
-            <label style="font-size:18px;">3. Causal Graph</label>
-        </div>
-    """, unsafe_allow_html=True)
-    graph_file = st.file_uploader("", type=["csv"])
+    st.markdown("**3. Causal Graph**", unsafe_allow_html=True)
+    st.markdown("<div style='margin-top:-12px'></div>", unsafe_allow_html=True)
+    graph_file = st.file_uploader("", type=["csv"], key="graph")
+
 
 @st.cache_data(show_spinner="Loading time-series …")
 def load_ts(file):
