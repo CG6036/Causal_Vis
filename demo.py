@@ -8,7 +8,7 @@ import networkx as nx
 from PIL import Image
 
 # Set page config
-st.set_page_config(page_title="Causal vs. Correlation Dashboard", layout="wide")
+st.set_page_config(page_title="SKT DRAM Price Causality Visualization Dashboard", layout="wide")
 
 # Use a narrow column to place logo and title on the top-left
 col1, col2 = st.columns([2, 8])  # col1: logo + title, col2: empty or content later
@@ -16,14 +16,14 @@ col1, col2 = st.columns([2, 8])  # col1: logo + title, col2: empty or content la
 with col1:
     st.image("impactiveAI_logo.png", width=1000)
 st.markdown(
-    "<h2 style='text-align: center; margin-top: -30px;'>📊 Causal vs. Correlation Dashboard</h2>",
+    "<h2 style='text-align: center; margin-top: -30px;'>SKT DRAM Price Causality Visualization Dashboard</h2>",
     unsafe_allow_html=True
 )
 
 # -----------------------------------------------------------------------------
 # 1. DATA UPLOAD (INLINE + SMALLER)
 # -----------------------------------------------------------------------------
-st.markdown("### 📂 Upload CSV Files")
+st.markdown("### 📂 Upload Files")
 col1, col2, col3 = st.columns([1, 1, 1])
 
 with col1:
@@ -60,10 +60,10 @@ except Exception as e:
 # 2. TARGET DATE & VARIABLE SELECTION
 # -----------------------------------------------------------------------------
 min_date, max_date = df_ts["date"].min(), df_ts["date"].max()
-target_dt = st.date_input("Select target date", value=max_date,
+target_dt = st.date_input("Select target date", value=datetime.date(2022, 10, 3),
                           min_value=min_date, max_value=max_date)
 
-n_vars = st.slider("Top-N variables (by |value|)", 1, 10, 5)
+n_vars = st.slider("Top-N variables (by |value|)", 1, 10, 3)
 
 latest_slice = (
     df_ts[df_ts["date"] == pd.to_datetime(target_dt)]
@@ -79,7 +79,7 @@ col_target_df = (latest_slice
                  .reset_index(drop=True))
 col_target = col_target_df["variable"].tolist()
 
-st.markdown("### 🔍 Selected Variables & Coefficients")
+st.markdown("### 🎯 Key Features with Strongest Causal Impact on Target")
 st.dataframe(col_target_df[["variable", "value"]],
              use_container_width=True)
 
@@ -89,7 +89,7 @@ coef_input = dict(zip(col_target_df["variable"], col_target_df["value"]))
 # -----------------------------------------------------------------------------
 # 3. VISUALIZATION 1 – CAUSAL GRAPH
 # -----------------------------------------------------------------------------
-st.markdown("## 1️⃣ Causal Graph")
+st.markdown("## 1️⃣ Causal Knowledge Graph")
 
 if graph_file is not None:
     try:
@@ -129,7 +129,7 @@ if graph_file is not None:
                 arrowsize=12,
                 connectionstyle="arc3,rad=0.2"
             )
-            plt.title("Significant Causal Links → ASP_Quarterly (v(t))", fontsize=14)
+            #plt.title("Significant Causal Links → ASP_Quarterly (v(t))", fontsize=14)
             plt.axis("off")
             plt.tight_layout()
             st.pyplot(fig_graph)
@@ -142,8 +142,8 @@ else:
 # -----------------------------------------------------------------------------
 # 4. VISUALIZATION 2 – TEMPORAL TRENDS
 # -----------------------------------------------------------------------------
-st.markdown("## 2️⃣  Causal-Coefficient Trend")
-lookback = st.slider("Rows to look back", 5, 60, 5)
+st.markdown("## 2️⃣  Causal Coefficient Overview")
+lookback = st.slider("Quarters to look back", 3, 60, 5)
 df_target = (df_ts[df_ts["date"] <= pd.to_datetime(target_dt)]
              .sort_values("date")
              .tail(lookback))
@@ -210,7 +210,7 @@ for i, var in enumerate(col_target):
     axes[i].legend(fontsize=7)
     axes[i].grid(linestyle=":", alpha=0.4)
 
-fig2.suptitle("Correlation vs. Causation", fontsize=14)
+#fig2.suptitle("Correlation vs. Causation", fontsize=14)
 fig2.tight_layout()
 st.pyplot(fig2)
 
