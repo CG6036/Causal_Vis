@@ -14,7 +14,7 @@ st.set_page_config(page_title="Causal vs. Correlation Dashboard", layout="wide")
 col1, col2 = st.columns([2, 8])  # col1: logo + title, col2: empty or content later
 
 with col1:
-    st.image("/Users/changyulee/Documents/SK_Siltron/impactiveAI_logo.png", width=1000)  # Adjust width as needed
+    st.image("impactiveAI_logo.png", width=1000)
 st.markdown(
     "<h2 style='text-align: center; margin-top: -30px;'>📊 Causal vs. Correlation Dashboard</h2>",
     unsafe_allow_html=True
