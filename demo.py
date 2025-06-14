@@ -9,7 +9,7 @@ from PIL import Image
 import datetime
 
 # Set page config
-st.set_page_config(page_title="SKT DRAM Price Causality Visualization Dashboard", layout="wide")
+st.set_page_config(page_title="SKT DRAM Price \nCausality Visualization Dashboard", layout="wide")
 
 # Use a narrow column to place logo and title on the top-left
 col1, col2 = st.columns([2, 8])  # col1: logo + title, col2: empty or content later
