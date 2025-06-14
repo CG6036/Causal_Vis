@@ -6,6 +6,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import MinMaxScaler
 import networkx as nx
 from PIL import Image
+import datetime
 
 # Set page config
 st.set_page_config(page_title="SKT DRAM Price Causality Visualization Dashboard", layout="wide")
