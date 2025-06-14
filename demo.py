@@ -28,7 +28,9 @@ st.markdown("### 📂 Upload Files")
 col1, col2, col3 = st.columns([1, 1, 1])
 
 with col1:
-    ts_file = st.file_uploader("Aggregated Result", type=["csv"])
+    st.markdown("<label style='font-size:18px;'>1. Aggregated Result</label>", unsafe_allow_html=True)
+    ts_file = st.file_uploader("", type=["csv"])
+
 with col2:
     q_file = st.file_uploader("Quarterly ASP", type=["csv"])
 with col3:
