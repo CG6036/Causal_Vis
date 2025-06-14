@@ -18,9 +18,9 @@ with col1:
     st.image("impactiveAI_logo.png", width=1000)
 st.markdown(
     """
-    <h2 style='text-align: center; margin-top: 20px;'>
+    <h2 style='text-align: center; margin-top: 10px;'>
         Causality Visualization Dashboard<br>
-        <span style='font-size: 18px;'>SKT DRAM Price</span>
+        <span style='font-size: 25px;'>SKT DRAM Price</span>
     </h2>
     """,
     unsafe_allow_html=True
