@@ -28,7 +28,11 @@ st.markdown("### 📂 Upload Files")
 col1, col2, col3 = st.columns([1, 1, 1])
 
 with col1:
-    st.markdown("<label style='font-size:18px;'>1. Aggregated Result</label>", unsafe_allow_html=True)
+    st.markdown("""
+        <div style="margin-bottom: -10px;">
+            <label style="font-size:18px;">1. Aggregated Result</label>
+        </div>
+    """, unsafe_allow_html=True)
     ts_file = st.file_uploader("", type=["csv"])
 
 with col2:
