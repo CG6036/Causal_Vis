@@ -78,10 +78,27 @@ except Exception as e:
 # 2. TARGET DATE & VARIABLE SELECTION
 # -----------------------------------------------------------------------------
 min_date, max_date = df_ts["date"].min(), df_ts["date"].max()
+'''
 target_dt = st.date_input("Select target date", value=datetime.date(2022, 10, 3),
                           min_value=min_date, max_value=max_date)
 
 n_vars = st.slider("Top-N variables (by |value|)", 1, 10, 3)
+'''
+with st.container():
+    st.markdown("""
+        <div style='padding: 10px 15px; background-color: #f0f2f6; border-radius: 8px; margin-bottom: 10px;'>
+            <h4 style='color: #003366;'>🎯 Target Adjustment</h4>
+        </div>
+    """, unsafe_allow_html=True)
+
+    col1, col2 = st.columns([1, 1])
+
+    with col1:
+        target_dt = st.date_input("📅 Select target date", value=datetime.date(2022, 10, 3),
+                                  min_value=min_date, max_value=max_date)
+
+    with col2:
+        n_vars = st.slider("🔢 Top-N variables (by |value|)", 1, 10, 3)
 
 latest_slice = (
     df_ts[df_ts["date"] == pd.to_datetime(target_dt)]
