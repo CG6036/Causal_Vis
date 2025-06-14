@@ -36,9 +36,20 @@ with col1:
     ts_file = st.file_uploader("", type=["csv"])
 
 with col2:
-    q_file = st.file_uploader("Quarterly ASP", type=["csv"])
+    st.markdown("""
+        <div style="margin-bottom: -10px;">
+            <label style="font-size:18px;">2. Quarterly ASP</label>
+        </div>
+    """, unsafe_allow_html=True)
+    q_file = st.file_uploader("", type=["csv"])
+
 with col3:
-    graph_file = st.file_uploader("Causal Graph", type=["csv"])
+    st.markdown("""
+        <div style="margin-bottom: -10px;">
+            <label style="font-size:18px;">3. Causal Graph</label>
+        </div>
+    """, unsafe_allow_html=True)
+    graph_file = st.file_uploader("", type=["csv"])
 
 @st.cache_data(show_spinner="Loading time-series …")
 def load_ts(file):
