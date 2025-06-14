@@ -84,11 +84,12 @@ min_date, max_date = df_ts["date"].min(), df_ts["date"].max()
 
 #n_vars = st.slider("Top-N variables (by |value|)", 1, 10, 3)
 
-st.markdown("""
-        <div style='padding: 10px 15px; background-color: #f0f2f6; margin-bottom: 10px;'>
-            <h4 style='color: #003366;'>🎯 Target Adjustment</h4>
-        </div>
-    """, unsafe_allow_html=True)
+#st.markdown("""
+#        <div style='padding: 10px 15px; background-color: #f0f2f6; margin-bottom: 10px;'>
+#            <h4 style='color: #003366;'>🎯 Target Adjustment</h4>
+#        </div>
+#    """, unsafe_allow_html=True)
+st.markdown("### 🎯 Target Adjustment")
 
 col1, col2 = st.columns([1, 1])
 with col1:
