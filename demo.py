@@ -29,7 +29,7 @@ col1, col2, col3 = st.columns([1, 1, 1])
 
 with col1:
     st.markdown("""
-        <div style="margin-bottom: -10px;">
+        <div style="margin-bottom: -20px;">
             <label style="font-size:18px;">1. Aggregated Result</label>
         </div>
     """, unsafe_allow_html=True)
