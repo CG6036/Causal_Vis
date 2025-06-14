@@ -20,7 +20,7 @@ st.markdown(
     """
     <h2 style='text-align: center; margin-top: 10px; margin-bottom: 10px'>
         Causality Visualization Dashboard<br>
-        <span style='font-size: 20px;'>SKT DRAM Price</span>
+        <span style='font-size: 24px;'>SKT DRAM Price</span>
     </h2>
     """,
     unsafe_allow_html=True
