@@ -37,7 +37,7 @@ with col1:
 
 with col2:
     st.markdown("""
-        <div style="margin-bottom: -10px;">
+        <div style="margin-bottom: -50px;">
             <label style="font-size:18px;">2. Quarterly ASP</label>
         </div>
     """, unsafe_allow_html=True)
@@ -45,7 +45,7 @@ with col2:
 
 with col3:
     st.markdown("""
-        <div style="margin-bottom: -10px;">
+        <div style="margin-bottom: -50px;">
             <label style="font-size:18px;">3. Causal Graph</label>
         </div>
     """, unsafe_allow_html=True)
