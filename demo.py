@@ -32,14 +32,14 @@ u1, u2 = st.columns(2)
 
 with u1:
     st.markdown(
-        "<div style='margin-bottom:-50px;'><label style='font-size:18px;'>1. Quarterly ASP</label></div>",
+        "<div style='margin-bottom:-50px;'><label style='font-size:18px;'>1. Average Selling Price (Quarterly ASP)</label></div>", 
         unsafe_allow_html=True,
     )
     q_file = st.file_uploader("", type=["csv"], key="q")
 
 with u2:
     st.markdown(
-        "<div style='margin-bottom:-50px;'><label style='font-size:18px;'>2. Causal Graph</label></div>",
+        "<div style='margin-bottom:-50px;'><label style='font-size:18px;'>2. Aggregated Causal Result</label></div>", 
         unsafe_allow_html=True,
     )
     graph_file = st.file_uploader("", type=["csv"], key="g")
