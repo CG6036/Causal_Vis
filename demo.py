@@ -9,7 +9,7 @@ import datetime
 from PIL import Image
 
 # --------------------------------------------------  PAGE HEADER
-st.set_page_config(page_title="SKT DRAM Price Causality Visualization Dashboard",
+st.set_page_config(page_title="SK Hynix DRAM Price Causality Visualization Dashboard",
                    layout="wide")
 
 col_logo, _ = st.columns([2, 8])
@@ -20,7 +20,7 @@ st.markdown(
     """
     <h2 style='text-align:center;margin-top:10px;margin-bottom:10px'>
         Causality Visualization Dashboard<br>
-        <span style='font-size:24px;'>SKT DRAM Price</span>
+        <span style='font-size:24px;'>SK Hynix DRAM Price</span>
     </h2>
     """,
     unsafe_allow_html=True,
