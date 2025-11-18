@@ -14,7 +14,7 @@ st.set_page_config(page_title="SK Hynix DRAM Price Causality Visualization Dashb
 
 col_logo, _ = st.columns([2, 8])
 with col_logo:
-    st.image("SK_Hynix.png", width=300)
+    st.image("SK_Hynix.png", width=200)
 
 st.markdown(
     """
